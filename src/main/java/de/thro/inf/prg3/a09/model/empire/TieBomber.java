@@ -1,6 +1,7 @@
 package de.thro.inf.prg3.a09.model.empire;
 
 import de.thro.inf.prg3.a09.model.Fighter;
+import de.thro.inf.prg3.a09.model.FlyweightFighter;
 import de.thro.inf.prg3.a09.model.Force;
 import javafx.scene.image.Image;
 
@@ -10,7 +11,7 @@ import javafx.scene.image.Image;
 
 public class TieBomber extends Fighter {
 
-	public TieBomber(String pilot, Image fighterImage) {
+	public TieBomber(String pilot, FlyweightFighter fighterImage) {
 		super(pilot, fighterImage);
 	}
 

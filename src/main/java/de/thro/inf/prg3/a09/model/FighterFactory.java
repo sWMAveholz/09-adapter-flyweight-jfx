@@ -24,6 +24,7 @@ public final class FighterFactory {
 	private final Random random;
 	private final NameGenerator nameGenerator;
 	private final ResourceLoader<Image> imageResourceLoader;
+	private FlyweightFighterFactory fff = new FlyweightFighterFactory();
 
 	public FighterFactory() {
 		nameGenerator = new NameGenerator();
@@ -40,17 +41,17 @@ public final class FighterFactory {
 	public Fighter createFighter() {
 		switch (random.nextInt(NumberOfKnownFighterTypes)) {
 			case 0:
-				return new AWing(nameGenerator.generateName(), imageResourceLoader.loadResource(ClassLoader.getSystemClassLoader(), "fighter/awing.jpg"));
+				return new AWing(nameGenerator.generateName(), fff.getFlyweightFighter(0));
 			case 1:
-				return new XWing(nameGenerator.generateName(), imageResourceLoader.loadResource(ClassLoader.getSystemClassLoader(), "fighter/xwing.jpg"));
+				return new XWing(nameGenerator.generateName(), fff.getFlyweightFighter(1));
 			case 2:
-				return new YWing(nameGenerator.generateName(), imageResourceLoader.loadResource(ClassLoader.getSystemClassLoader(), "fighter/ywing.jpg"));
+				return new YWing(nameGenerator.generateName(), fff.getFlyweightFighter(2));
 			case 3:
-				return new TieBomber(nameGenerator.generateName(), imageResourceLoader.loadResource(ClassLoader.getSystemClassLoader(), "fighter/tiebomber.jpg"));
+				return new TieBomber(nameGenerator.generateName(), fff.getFlyweightFighter(3));
 			case 4:
-				return new TieFighter(nameGenerator.generateName(), imageResourceLoader.loadResource(ClassLoader.getSystemClassLoader(), "fighter/tiefighter.jpg"));
+				return new TieFighter(nameGenerator.generateName(), fff.getFlyweightFighter(4));
 			default:
-				return new TieInterceptor(nameGenerator.generateName(), imageResourceLoader.loadResource(ClassLoader.getSystemClassLoader(), "fighter/tieinterceptor.jpg"));
+				return new TieInterceptor(nameGenerator.generateName(), fff.getFlyweightFighter(5));
 		}
 	}
 }

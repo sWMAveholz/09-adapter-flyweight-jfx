@@ -1,12 +1,13 @@
 package de.thro.inf.prg3.a09.model.rebellion;
 
 import de.thro.inf.prg3.a09.model.Fighter;
+import de.thro.inf.prg3.a09.model.FlyweightFighter;
 import de.thro.inf.prg3.a09.model.Force;
 import javafx.scene.image.Image;
 
 public class AWing extends Fighter {
 
-	public AWing(String pilot, Image fighterImage) {
+	public AWing(String pilot, FlyweightFighter fighterImage) {
 		super(pilot, fighterImage);
 	}
 

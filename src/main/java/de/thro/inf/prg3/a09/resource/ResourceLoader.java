@@ -21,6 +21,7 @@ public class ResourceLoader<T> {
 		this.resourceInstantiator = resourceInstantiator;
 	}
 
+
 	/**
 	 * Load a resource from a given ClassLoader instance an a passed path to the resource (relative or absolute)
 	 *
